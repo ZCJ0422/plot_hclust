@@ -3,14 +3,19 @@ library(SummarizedExperiment) |> suppressPackageStartupMessages()
 dat <- data.frame(matrix(rnorm(100), 20))
 se <- SummarizedExperiment(assay = dat)
 ec <- eclust(se, direction = "both")
-assayNames(se) <- 'counts'
+assayNames(ec) <- 'counts'
 
 library(tidytree)
 library(tibble)
 library(tidyr)
 f <- function(ec,bycol = TRUE,assay = 1,longer = FALSE,metada = FALSE) {
     da <- assay(ec, assay) |> data.frame() |> rownames_to_column(var = "label")
-    name <- assayNames(se)[assay]
+    
+    if(is.null(assayNames(se)[assay])){
+      name <- 'counts'
+    } else {
+      name <- assayNames(se)[assay]
+    }
     
     if (bycol) {
       ph <- colhclust(ec) |> as.phylo()
