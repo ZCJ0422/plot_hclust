@@ -11,10 +11,10 @@ library(tidyr)
 f <- function(ec,bycol = TRUE,assay = 1,longer = FALSE,metada = FALSE) {
     da <- assay(ec, assay) |> data.frame() |> rownames_to_column(var = "label")
     
-    if(is.null(assayNames(se)[assay])){
+    if(is.null(assayNames(ec)[assay])){
       name <- 'counts'
     } else {
-      name <- assayNames(se)[assay]
+      name <- assayNames(ec)[assay]
     }
     
     if (bycol) {
