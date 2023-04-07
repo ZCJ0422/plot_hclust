@@ -37,7 +37,7 @@ f <- function(ec,bycol = TRUE,assay = 1,longer = FALSE,metada = FALSE) {
     tda <- treedata(phylo = ph) |> left_join(da)
     
     if (metada) {
-      md <- as_tibble(md) |> rownames_to_column(var = "label")
+      md <- data.frame(md) |> rownames_to_column(var = "label")
       tda <- left_join(tda, md)
     }
     
