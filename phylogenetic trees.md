@@ -23,3 +23,5 @@ The matrix **edge** has the following properties:
 * 第一列的值大于n
 * 所有的node在第一列至少出现两次
 * 所有的元素，除了根节点n+1, 都会在第二列出现一次
+
+##  [supporting dendro class to phylo class](https://github.com/YuLab-SMU/treeio/pull/95)
