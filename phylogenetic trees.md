@@ -2,7 +2,7 @@
 
 ## 1. termiology and notations
 
-| name|walue|
+| name|value|
 | ----------- | ----------- |
 | branch | edge, vertex |
 | node   | inernal node |
